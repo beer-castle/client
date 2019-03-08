@@ -24,6 +24,12 @@ $(document).ready(function () {
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
               </li>
               <li class="nav-item">
+                <a id="register_click" href="#" onclick="register()">Register</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" id="login_click" onclick="login()">Sign in</a>
+              </li>
+              <li class="nav-item">
                 <a href="#" onclick="signOut()">Sign out</a>
               </li>
             </ul>
