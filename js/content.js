@@ -41,4 +41,22 @@ $(document).ready(function () {
   getBeerOfTheDay()
   let youtubePlayer = `<div id="player"></div>`
   $('#content').append(youtubePlayer);
+  if(localStorage.getItem('token')){
+    $('#content').show()
+    $('#register_form').hide()
+    $('#login').hide()
+    $('#sign_out').show()
+    $('#login_click').hide()
+    $('#register_click').hide()
+    $('#google_signin').hide()
+  }
+  else {
+    $('#content').hide()
+    $('#register_form').show()
+    $('#login').show()
+    $('#sign_out').hide()
+    $('#login_click').show()
+    $('#register_click').show()
+    $('#google_signin').show()
+  }
 })

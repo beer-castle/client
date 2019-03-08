@@ -60,6 +60,41 @@
   </div>
   <div id="content"></div>
 
+  <form id="login" onsubmit="login()">
+    Email:<br>
+    <input type="text" name="email" id="email">
+    <br>
+    Password:<br>
+    <input type="password" name="pwd" id="pw">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+  
+  <form id="register_form" onsubmit="register()">
+    <div class="container">
+      <h1>Register</h1>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="reg_email" required>
+      <br>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="pwd" required>
+      <br>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <hr>
+  
+      <input type="submit" value="Submit"></input>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a id="sign_in">Sign in</a>.</p>
+    </div>
+  </form>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
