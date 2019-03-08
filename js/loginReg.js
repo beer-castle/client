@@ -33,4 +33,4 @@ function login() {
     .fail(err => {
         console.log(err)
     })
-}
+} 
