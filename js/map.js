@@ -11,7 +11,7 @@ function showPosition(position) {
     lon=position.coords.longitude;
     latlon=new google.maps.LatLng(lat, lon)
     mapholder=document.getElementById('mapholder')
-    mapholder.style.height='250px';
+    mapholder.style.height='350px';
     mapholder.style.width='100%';
 
     console.log("lokasi ==>", latlon.lat)
