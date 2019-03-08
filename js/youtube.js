@@ -18,8 +18,8 @@ function onYouTubeIframeAPIReady() {
                 showinfo: 0,
                 autohide: 1,
                 modestbranding: 1,
-                vq: 'hd1080'},
-    videoId: 'fLDaFmr6GDU',
+                vq: '720'},
+    videoId: '4Ol3HHK2v5CARr2J',
     events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
@@ -40,3 +40,21 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
+
+function getYoutube(name) {
+    console.log(name)
+    $.ajax({
+      url: `${baseURL}/videos?search=${name}`,
+      method: 'GET',
+      data: {
+        token: localStorage.getItem('token')
+      }
+    })
+      .done((data) => {
+        console.log(data.videoId)
+        player.loadVideoById(data.videoId)
+      })
+      .fail(error => {
+        console.log(error)
+      })
+  }
