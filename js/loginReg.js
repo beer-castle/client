@@ -18,9 +18,11 @@ $(document).ready(function() {
   
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <br>
   
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" id="pw" required>
+      <br>
   
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -46,7 +48,7 @@ $(document).ready(function() {
     })
 
     $('#register_click').click(function() {
-        $('register_form').show()
+        $('#register_form').show()
         $('#register_form').submit(function() {
             event.preventDefault()
     
