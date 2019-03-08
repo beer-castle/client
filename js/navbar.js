@@ -21,7 +21,7 @@ $(document).ready(function () {
                 <a href="#" onclick=""></a>
               </li>
               <li class="nav-item">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="g-signin2" data-onsuccess="onSignIn" id="google_signin"></div>
               </li>
               <li class="nav-item">
                 <a id="register_click" href="#" onclick="register()">Register</a>
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 <a href="#" id="login_click" onclick="login()">Sign in</a>
               </li>
               <li class="nav-item">
-                <a href="#" onclick="signOut()">Sign out</a>
+                <a href="#" onclick="signOut()" id="sign_out">Sign out</a>
               </li>
             </ul>
             
