@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // $('#content').append(` `)
 
+    getBeerList()
     
-
     // $('#content').append(``)
 
     $('#login').hide()
@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('#login_click').click(function() {
         $('#login').show()
         $('#register_form').hide()
+        $('#google_signin').show()
     })
 
     $('#login').submit(function() {
@@ -70,6 +71,7 @@ function login() {
     })
     .done(data => {
         localStorage.setItem('token', data.token)
+        isLogin(true)
     })
     .fail(err => {
         console.log(err)

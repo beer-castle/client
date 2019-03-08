@@ -12,6 +12,7 @@ function onSignIn(googleUser) {
   })
     .done(data => {
       localStorage.setItem('token', data.token);
+      isLogin(true);
     })
     .fail(error => {
       console.log(error)
@@ -23,5 +24,6 @@ function signOut() {
   auth2.signOut().then(function () {
     localStorage.removeItem('token');
     console.log('User signed out.');
+    isLogin(false)
   });
 }

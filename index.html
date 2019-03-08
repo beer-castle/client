@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Beer Castle</title>
   <meta name="google-signin-client_id" content="1076129057884-slnvg94j4qsijo2aisv3s24hdfi7scis.apps.googleusercontent.com">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div id="navbar"></div>
+
+  <div id="body-before-signin">
   <div class="container" id="beer-of-the-day">
       <div class="row">
         <div class="col-md-4 offset-md-5">
-            <p><button onclick="xxx()">Beer of the Day</button></p>
+            <button onclick="getBeerOfTheDay()">Beer of the Day</button>
         </div>
+        <div class="col-md-1 offset-md-2">
+            
+        </div>
+        
       </div>
   </div>
-
+  <br>
   <div class="container" id="container-list">
-      <div class="row" id="row">
-        <div class="col-md-3">
-          Beer List with Picture here (1)
-        </div>
-        <div class="col-md-3">
-          Beer List with Picture here (2)
-        </div>
-        <div class="col-md-3">
-          Beer List with Picture here (3)
-        </div>
-        <div class="col-md-3">
-          Beer List with Picture here (4)
-        </div>
+      <div class="row" id="beerRow">
+        
       </div>   
   </div>
-  
+  <br>
   <div class="container" id="container-detail">
-      <div class="row" id="row1">
-          <div class="col-md-6">
-            Beer Detail with Picture here
-          </div>
-          <div class="col-md-6">
-            Beer Detail with Information from API here
-          </div>
+      <div class="row" id="beerDay">
       </div>
   </div>
-  
+  <br>
   <div class="container" id="container-multimedia">
       <div class="row">
         <div class="col-md-6">
           <div id="content"></div>
+          <div id="player"></div>
         </div>
         <div class="col-md-6">
           <h4> Location to Drink Beer: </h4>
@@ -58,6 +50,8 @@
         </div>
       </div>
   </div>
+  </div>
+
   <div id="content"></div>
 
   <form id="login" onsubmit="login()">
@@ -67,7 +61,11 @@
     Password:<br>
     <input type="password" name="pwd" id="pw">
     <br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="submit_button">
+    <br><br>
+    <center>
+    <div class="g-signin2" data-onsuccess="onSignIn" id="google_signin"></div>
+  </center>
   </form>
   
   <form id="register_form" onsubmit="register()">
@@ -84,13 +82,14 @@
       <br>
   
       <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="pwd" required>
       <hr>
   
-      <input type="submit" value="Submit"></input>
+      <input type="submit" value="Submit" id="submit_button"></input>
     </div>
     
     <div class="container signin">
+      <br>
       <p>Already have an account? <a id="sign_in">Sign in</a>.</p>
     </div>
   </form>

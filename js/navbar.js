@@ -5,32 +5,21 @@ $(document).ready(function () {
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="row">
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
+            <a class="navbar-brand" href="#" onclick="showContent()">Beer Castle</a>
           </div>
-          <div class="col offset-md-2">
-            <a class="navbar-brand" href="#">Beer Castle</a>
-          </div>
-          <div class="col offset-md-3">
+          <div class="col offset-md-7">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a href="#" onclick=""></a>
+              </li>
+              
+              <li class="nav-item">
+                <a id="register_click" href="#" onclick="register()" class="btn-edt">Register</a>
               </li>
               <li class="nav-item">
-                <div class="g-signin2" data-onsuccess="onSignIn" id="google_signin"></div>
+                <a href="#" id="login_click" onclick="login()" class="btn-edt">Sign in</a>
               </li>
               <li class="nav-item">
-                <a id="register_click" href="#" onclick="register()">Register</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" id="login_click" onclick="login()">Sign in</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" onclick="signOut()" id="sign_out">Sign out</a>
+                <a href="#" onclick="signOut()" id="sign_out" class="btn-edt">Sign out</a>
               </li>
             </ul>
             
