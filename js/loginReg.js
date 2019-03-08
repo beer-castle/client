@@ -11,24 +11,24 @@ $(document).ready(function() {
 
     
 
-    $('#content').append(`<form id="register_form">
+    $('#content').append(`<form id="register_form" onsubmit="register()">
     <div class="container">
       <h1>Register</h1>
       <hr>
   
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <input type="text" placeholder="Enter Email" name="email" id="reg_email" required>
       <br>
   
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="pw" required>
+      <input type="password" placeholder="Enter Password" name="psw" id="pwd" required>
       <br>
   
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
       <hr>
   
-      <button type="submit" class="registerbtn">Register</button>
+      <input type="submit" value="Submit"></input>
     </div>
     
     <div class="container signin">
@@ -41,18 +41,22 @@ $(document).ready(function() {
 
     $('#login_click').click(function() {
         $('#login').show()
-        $('#login').submit(function() {
-            event.preventDefault()
-    
-        })
+        
+    })
+
+    $('#login').submit(function() {
+        event.preventDefault()
+
     })
 
     $('#register_click').click(function() {
         $('#register_form').show()
-        $('#register_form').submit(function() {
-            event.preventDefault()
-    
-        })
+        
+    })
+
+    $('#register_form').submit(function() {
+        event.preventDefault()
+
     })
 
     $('#sign_in').click(function() {
@@ -64,17 +68,19 @@ $(document).ready(function() {
 })
 
 function register() {
-    
+    console.log($('#email').val())
+    console.log($('#pw').val())
     $.ajax({
         url: 'http://localhost:3000/users/register',
         method: 'POST',
         data: {
-            email: $('#email').val(),
-            password: $('#pw').val()
+            email: $('#reg_email').val(),
+            password: $('#pwd').val()
         }
     })
     .done(data => {
-        
+        $('#register_form').hide()
+        $('#login').show()
     })
     .fail(err => {
         console.log(err)
