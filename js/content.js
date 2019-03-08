@@ -9,7 +9,7 @@ function getBeerOfTheDay () {
     .done(data => {
       console.log(data.name)
       getBeerPicture(data.name)
-      getYoutube(data.name)
+      getYoutube(`Beer ${data.name}`)
     })
     .fail(error => {
       console.log(error)
@@ -31,23 +31,6 @@ function getBeerPicture(name) {
     .done((data) => {
       console.log(data.data[random()].assets.preview.url)
       // return data.data[random()].assets.preview.url
-    })
-    .fail(error => {
-      console.log(error)
-    })
-}
-
-function getYoutube(name) {
-  $.ajax({
-    url: `${baseURL}/videos?search=${name}`,
-    method: 'GET',
-    data: {
-      token: localStorage.getItem('token')
-    }
-  })
-    .done((data) => {
-      console.log(data.videoId)
-      onYouTubeIframeAPIReady(data.videoId)
     })
     .fail(error => {
       console.log(error)
